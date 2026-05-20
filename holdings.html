@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>持仓行业映射</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+<div class="layout">
+  <nav class="sidebar">
+    <div class="sidebar-header">
+      <h1>行业研究</h1>
+      <div class="subtitle">申万一级行业 · 31个行业</div>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-title">总览</div>
+      <a href="index.html" class="nav-item">📊 全行业概览</a>
+      <a href="holdings.html" class="nav-item active">📋 持仓行业映射</a>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-title">深度研究</div>
+      <a href="nonbank-finance.html" class="nav-item">🏦 非银金融 <span class="badge green">低估</span></a>
+      <a href="defense.html" class="nav-item">✈️ 国防军工 <span class="badge red">高估</span></a>
+      <a href="electronics.html" class="nav-item">💻 电子 <span class="badge red">高估</span></a>
+    </div>
+  </nav>
+
+  <div class="main-content">
+    <div class="page-header fade-in">
+      <h2>持仓 ↔ 申万行业映射</h2>
+      <div class="meta">最后更新：2026-05-19 · 按申万一级行业归类</div>
+    </div>
+
+    <!-- 持仓总览 -->
+    <div class="stats-row fade-in">
+      <div class="stat-card"><div class="stat-value" style="color:var(--accent)">14</div><div class="stat-label">持仓标的</div></div>
+      <div class="stat-card"><div class="stat-value" style="color:var(--accent)">7</div><div class="stat-label">覆盖行业</div></div>
+      <div class="stat-card"><div class="stat-value red">60%+</div><div class="stat-label">科技TMT占比</div></div>
+      <div class="stat-card"><div class="stat-value" style="color:var(--accent)">0</div><div class="stat-label">消费/医药/公用</div></div>
+    </div>
+
+    <!-- 行业分布图 -->
+    <div class="card fade-in">
+      <div class="card-header">
+        <span class="card-title">持仓行业分布</span>
+        <span class="card-subtitle">颜色表示行业估值状态</span>
+      </div>
+      <div id="holdings-map"></div>
+    </div>
+
+    <!-- 按行业分组 -->
+    <div class="card fade-in">
+      <div class="card-header"><span class="card-title">按申万一级行业分组</span></div>
+
+      <h4 style="color:var(--red);margin:20px 0 12px">🔴 电子（801080）· 高估 96.7% · 4只持仓</h4>
+      <div class="table-wrapper" style="margin-bottom:16px">
+        <table>
+          <thead><tr><th>个股</th><th>代码</th><th>二级行业</th><th>持仓</th><th>状态</th><th>备注</th></tr></thead>
+          <tbody>
+            <tr><td><strong>安凯微电子</strong></td><td>688620</td><td>半导体(IC设计)</td><td>10,059股</td><td><span class="tag green">持有</span></td><td>朋友A，已完成分析</td></tr>
+            <tr><td><strong>通富微电</strong></td><td>002156</td><td>半导体(封测)</td><td>600股</td><td><span class="tag green">持有</span></td><td>投顾，+108%</td></tr>
+            <tr><td><strong>国光电器</strong></td><td>002045</td><td>消费电子(声学)</td><td>2,800股</td><td><span class="tag red">持有</span></td><td>投顾2024建仓，-33%</td></tr>
+            <tr><td><strong>小米集团-W</strong></td><td>01810.HK</td><td>消费电子(手机+汽车)</td><td>14,600股</td><td><span class="tag yellow">持有</span></td><td>港股</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4 style="color:var(--red);margin:20px 0 12px">🔴 计算机（801750）· 高估 90% · 3只持仓</h4>
+      <div class="table-wrapper" style="margin-bottom:16px">
+        <table>
+          <thead><tr><th>个股</th><th>代码</th><th>二级行业</th><th>持仓</th><th>状态</th><th>备注</th></tr></thead>
+          <tbody>
+            <tr><td><strong>软通动力</strong></td><td>301236</td><td>IT服务</td><td>1,700股</td><td><span class="tag green">持有</span></td><td>投顾5/18新签，鸿蒙生态</td></tr>
+            <tr><td><strong>中国软件</strong></td><td>600536</td><td>软件开发</td><td>500股</td><td><span class="tag green">持有</span></td><td>投顾5/18新签，麒麟+中标</td></tr>
+            <tr><td><strong>商汤-W</strong></td><td>00020.HK</td><td>AI(视觉)</td><td>68,000股</td><td><span class="tag green">持有</span></td><td>港股，朋友C</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4 style="color:var(--red);margin:20px 0 12px">🔴 国防军工（801740）· 高估 93.3% · 1只+ETF</h4>
+      <div class="table-wrapper" style="margin-bottom:16px">
+        <table>
+          <thead><tr><th>个股</th><th>代码</th><th>二级行业</th><th>持仓</th><th>状态</th><th>备注</th></tr></thead>
+          <tbody>
+            <tr><td><strong>中航西飞</strong></td><td>000768</td><td>航空装备</td><td>3,000股</td><td><span class="tag green">持有</span></td><td>投顾5/18新签，运20+轰6</td></tr>
+            <tr><td><strong>卫星ETF永赢</strong></td><td>159218</td><td>跨行业ETF</td><td>20,000股</td><td><span class="tag green">持有</span></td><td>+465% 🔥</td></tr>
+            <tr style="opacity:0.5"><td><del>中直股份</del></td><td>600038</td><td>航空装备</td><td>—</td><td><span class="tag red">已清仓</span></td><td>亏-3.7万</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4 style="color:var(--green);margin:20px 0 12px">🟢 非银金融（801790）· 低估 3.3% · 2只持仓</h4>
+      <div class="table-wrapper" style="margin-bottom:16px">
+        <table>
+          <thead><tr><th>个股</th><th>代码</th><th>二级行业</th><th>持仓</th><th>状态</th><th>备注</th></tr></thead>
+          <tbody>
+            <tr><td><strong>中金公司</strong></td><td>601995</td><td>证券</td><td>2,000股</td><td><span class="tag green">持有</span></td><td>投顾，减仓后剩余</td></tr>
+            <tr><td><strong>信达证券</strong></td><td>601059</td><td>证券+AMC</td><td>2,000股</td><td><span class="tag green">持有</span></td><td>朋友B，等换股审批</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4 style="color:var(--yellow);margin:20px 0 12px">🟡 基础化工（801030）· 中性 56.7% · 1只持仓</h4>
+      <div class="table-wrapper" style="margin-bottom:16px">
+        <table>
+          <thead><tr><th>个股</th><th>代码</th><th>二级行业</th><th>持仓</th><th>状态</th><th>备注</th></tr></thead>
+          <tbody>
+            <tr><td><strong>金禾实业</strong></td><td>002597</td><td>化学制品(食品添加剂)</td><td>3,000股</td><td><span class="tag green">持有</span></td><td>投顾5/18新签</td></tr>
+            <tr style="opacity:0.5"><td><del>彤程新材</del></td><td>603650</td><td>化学制品(电子化学品)</td><td>—</td><td><span class="tag green">已清仓</span></td><td>+115%锁利</td></tr>
+            <tr style="opacity:0.5"><td><del>航锦科技</del></td><td>000818</td><td>化学制品+军工</td><td>—</td><td><span class="tag red">已清仓</span></td><td>证监会调查止损</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4 style="color:var(--yellow);margin:20px 0 12px">🟡 传媒（801760）· 中性 60% · 1只持仓</h4>
+      <div class="table-wrapper" style="margin-bottom:16px">
+        <table>
+          <thead><tr><th>个股</th><th>代码</th><th>二级行业</th><th>持仓</th><th>状态</th><th>备注</th></tr></thead>
+          <tbody>
+            <tr><td><strong>奥飞娱乐</strong></td><td>002292</td><td>影视/玩具IP</td><td>13,200股</td><td><span class="tag red">待减仓</span></td><td>投顾蓝海，-23%</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4 style="color:var(--text-muted);margin:20px 0 12px">— 综合/特殊处理 · 1只</h4>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>个股</th><th>代码</th><th>行业</th><th>持仓</th><th>状态</th><th>备注</th></tr></thead>
+          <tbody>
+            <tr><td><strong>*ST天宜新材</strong></td><td>000676</td><td>钢铁/重整</td><td>13,376股</td><td><span class="tag yellow">持有等重整</span></td><td>退市风险股</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 风格集中度 -->
+    <div class="card fade-in">
+      <div class="card-header"><span class="card-title">风格集中度分析</span></div>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>板块</th><th>持仓数</th><th>占比</th><th>说明</th></tr></thead>
+          <tbody>
+            <tr><td><strong>科技TMT（电子+计算机+军工+传媒）</strong></td><td>9只</td><td style="color:var(--red);font-weight:600">60%+</td><td>科技重仓</td></tr>
+            <tr><td><strong>金融</strong></td><td>2只</td><td>~15%</td><td>防御性配置</td></tr>
+            <tr><td><strong>化工/消费</strong></td><td>1只</td><td>~7%</td><td>极少</td></tr>
+            <tr><td><strong>稳态消费/医药/公用事业</strong></td><td>0只</td><td style="color:var(--red);font-weight:600">0%</td><td>完全空白</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="verdict-box neutral" style="margin-top:16px">
+        <div class="verdict-title">结论</div>
+        你的持仓是典型的"成长股偏好+一点点低估金融对冲"，缺失中等估值的稳态消费/医药/公用事业。
+      </div>
+    </div>
+
+    <!-- 研究优先级 -->
+    <div class="card fade-in">
+      <div class="card-header"><span class="card-title">待研究行业优先级</span></div>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>优先级</th><th>行业</th><th>理由</th></tr></thead>
+          <tbody>
+            <tr><td><span class="tag red">P0</span></td><td><strong>国防军工</strong></td><td>持仓2只+ETF，热度高，估值贵但订单脉冲</td></tr>
+            <tr><td><span class="tag red">P0</span></td><td><strong>电子</strong></td><td>持仓4只，含半导体+消费电子两大子赛道</td></tr>
+            <tr><td><span class="tag red">P0</span></td><td><strong>计算机</strong></td><td>持仓3只，鸿蒙/信创/AI三主线</td></tr>
+            <tr><td><span class="tag red">P0</span></td><td><strong>非银金融</strong></td><td>持仓2只，已完成 ✓</td></tr>
+            <tr><td><span class="tag yellow">P1</span></td><td><strong>基础化工</strong></td><td>持仓金禾，但行业涉及面广</td></tr>
+            <tr><td><span class="tag yellow">P1</span></td><td><strong>传媒</strong></td><td>持仓奥飞，AI+IP衍生</td></tr>
+            <tr><td><span class="tag green">P2</span></td><td>银行/房地产/食品饮料/医药</td><td>虽无持仓但需要行业认知</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 复合标的 -->
+    <div class="card fade-in">
+      <div class="card-header"><span class="card-title">跨行业ETF/复合标的特别说明</span></div>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>标的</th><th>表面行业</th><th>实际涉及</th></tr></thead>
+          <tbody>
+            <tr><td><strong>卫星ETF永赢（159218）</strong></td><td>通信/军工</td><td>卫星制造（军工）+ 卫星运营（通信）+ 应用（计算机）</td></tr>
+            <tr><td><strong>小米集团（01810）</strong></td><td>电子</td><td>手机（电子）+ 汽车（汽车）+ IoT（家电）+ 互联网（传媒）</td></tr>
+            <tr><td><strong>中航西飞（000768）</strong></td><td>国防军工</td><td>大飞机产业链（运20+C919转包）</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="insight-box" style="margin-top:12px">
+        <div class="insight-title">研究规则</div>
+        研究一级行业时，必须额外检查复合标的的"次要敞口"是否被分析到。
+      </div>
+    </div>
+
+    <div class="footer">持仓行业映射 · 最后更新：2026-05-19</div>
+  </div>
+</div>
+<button class="back-top" onclick="scrollToTop()">↑</button>
+<script src="js/main.js"></script>
+</body>
+</html>

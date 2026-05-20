@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>行业研究全景 | 申万31行业</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+
+<div class="layout">
+  <!-- Sidebar -->
+  <nav class="sidebar">
+    <div class="sidebar-header">
+      <h1>行业研究</h1>
+      <div class="subtitle">申万一级行业 · 31个行业</div>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-title">总览</div>
+      <a href="index.html" class="nav-item active">📊 全行业概览</a>
+      <a href="holdings.html" class="nav-item">📋 持仓行业映射</a>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-title">深度研究</div>
+      <a href="nonbank-finance.html" class="nav-item">🏦 非银金融 <span class="badge green">低估</span></a>
+      <a href="defense.html" class="nav-item">✈️ 国防军工 <span class="badge red">高估</span></a>
+      <a href="electronics.html" class="nav-item">💻 电子 <span class="badge red">高估</span></a>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-title">五大板块</div>
+      <a href="#fin" class="nav-item">🏛️ 金融地产</a>
+      <a href="#energy" class="nav-item">⚡ 能源金属</a>
+      <a href="#consumer" class="nav-item">🛒 消费医药</a>
+      <a href="#tech" class="nav-item">🔬 科技TMT</a>
+      <a href="#mfg" class="nav-item">🏭 制造周期</a>
+    </div>
+  </nav>
+
+  <!-- Main -->
+  <div class="main-content">
+    <div class="page-header fade-in">
+      <h2>申万一级行业全景图</h2>
+      <div class="meta">31个行业极简定位 · 更新日期：2026-05-19 · 数据来源：AkShare 申万指数</div>
+    </div>
+
+    <!-- Summary Stats -->
+    <div class="stats-row fade-in">
+      <div class="stat-card">
+        <div class="stat-value green">10</div>
+        <div class="stat-label">🟢 低估行业</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value yellow">12</div>
+        <div class="stat-label">🟡 中性行业</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value red">9</div>
+        <div class="stat-label">🔴 高估行业</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" style="color:var(--accent)">31</div>
+        <div class="stat-label">行业总数</div>
+      </div>
+    </div>
+
+    <!-- Five Sectors -->
+    <div class="card fade-in">
+      <div class="card-header">
+        <span class="card-title">五大板块分类</span>
+        <span class="card-subtitle">按"商业本质"归类</span>
+      </div>
+      <div class="sector-grid">
+        <div class="sector-card" onclick="document.getElementById('fin').scrollIntoView({behavior:'smooth'})">
+          <div class="sector-name">🏛️ 金融地产</div>
+          <div class="sector-count">4个行业</div>
+          <div class="sector-traits">高杠杆、强政策敏感、强周期、低估值</div>
+        </div>
+        <div class="sector-card" onclick="document.getElementById('energy').scrollIntoView({behavior:'smooth'})">
+          <div class="sector-name">⚡ 能源金属</div>
+          <div class="sector-count">6个行业</div>
+          <div class="sector-traits">大宗商品价格驱动、上中游、周期</div>
+        </div>
+        <div class="sector-card" onclick="document.getElementById('consumer').scrollIntoView({behavior:'smooth'})">
+          <div class="sector-name">🛒 消费医药</div>
+          <div class="sector-count">8个行业</div>
+          <div class="sector-traits">需求侧驱动、品牌+渠道、稳态/弱周期</div>
+        </div>
+        <div class="sector-card" onclick="document.getElementById('tech').scrollIntoView({behavior:'smooth'})">
+          <div class="sector-name">🔬 科技TMT</div>
+          <div class="sector-count">5个行业</div>
+          <div class="sector-traits">技术迭代、高估值高弹性、政策/订单驱动</div>
+        </div>
+        <div class="sector-card" onclick="document.getElementById('mfg').scrollIntoView({behavior:'smooth'})">
+          <div class="sector-name">🏭 制造周期</div>
+          <div class="sector-count">8个行业</div>
+          <div class="sector-traits">工业品/服务、产能周期、需求弹性</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Full Valuation Table -->
+    <div class="card fade-in">
+      <div class="card-header">
+        <span class="card-title">全行业估值快照</span>
+        <span class="card-subtitle">PE-TTM 从低到高排列 · 点击表头排序</span>
+      </div>
+      <div class="filter-bar">
+        <input type="text" class="search-input" id="search-input" placeholder="搜索行业名称..." oninput="searchTable('search-input','valuation-table')">
+        <button class="filter-btn active" onclick="filterTable('all')">全部</button>
+        <button class="filter-btn" onclick="filterTable('低估')">🟢 低估</button>
+        <button class="filter-btn" onclick="filterTable('中性')">🟡 中性</button>
+        <button class="filter-btn" onclick="filterTable('高估')">🔴 高估</button>
+      </div>
+      <div class="table-wrapper">
+        <table id="valuation-table">
+          <thead>
+            <tr>
+              <th onclick="sortTable('valuation-table',0,'str')">行业 <span class="sort-arrow">↕</span></th>
+              <th onclick="sortTable('valuation-table',1,'num')">成份 <span class="sort-arrow">↕</span></th>
+              <th onclick="sortTable('valuation-table',2,'num')">PE-TTM <span class="sort-arrow">↕</span></th>
+              <th onclick="sortTable('valuation-table',3,'num')">PB <span class="sort-arrow">↕</span></th>
+              <th onclick="sortTable('valuation-table',4,'str')">股息率 <span class="sort-arrow">↕</span></th>
+              <th onclick="sortTable('valuation-table',5,'num')">PE分位 <span class="sort-arrow">↕</span></th>
+              <th>定性</th>
+              <th>板块</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Five Sectors Detail -->
+    <!-- 金融地产 -->
+    <div id="fin" class="industry-section fade-in">
+      <h3>一、金融地产板块（4个行业）</h3>
+      <p style="color:var(--text-secondary);margin-bottom:16px;font-size:14px">共同点：杠杆经营，估值依赖宏观+政策，全市场最便宜的地方</p>
+
+      <div class="stock-profile">
+        <div class="profile-header">
+          <div>
+            <span class="profile-name">1. 非银金融</span>
+            <span class="profile-code">801790.SI · 82只成份</span>
+          </div>
+          <span class="tag tag-lg green">🟢 低估 PE 10.12 · 分位3.3%</span>
+        </div>
+        <div class="profile-grid">
+          <div class="metric"><div class="value">10.12</div><div class="label">PE-TTM</div></div>
+          <div class="metric"><div class="value">1.23</div><div class="label">PB</div></div>
+          <div class="metric"><div class="value">2.41%</div><div class="label">股息率</div></div>
+          <div class="metric"><div class="value" style="color:var(--accent)">✓ 持仓</div><div class="label">中金+信达</div></div>
+        </div>
+        <div class="profile-desc">
+          证券（券商）+ 保险 + 多元金融。券商靠经纪+投行+自营；保险靠承保利润+利差。当前看点：汇金系整合（中金+信达换股）、新国九条推动头部券商合并。<br>
+          <strong>关键变量</strong>：日均成交额、长端利率、保险新业务价值率
+        </div>
+      </div>
+
+      <div class="stock-profile">
+        <div class="profile-header">
+          <div>
+            <span class="profile-name">2. 银行</span>
+            <span class="profile-code">42只成份 · 全市场最便宜</span>
+          </div>
+          <span class="tag tag-lg green">🟢 低估 PE 6.79 · 分位0%</span>
+        </div>
+        <div class="profile-desc">
+          净息差（贷款利率-存款利率）+ 中间业务。便宜的理由：市场担心房地产+地方债坏账、净息差见底未明。<br>
+          <strong>关键变量</strong>：净息差、不良率、拨备覆盖率、ROE
+        </div>
+      </div>
+
+      <div class="stock-profile">
+        <div class="profile-header">
+          <div>
+            <span class="profile-name">3. 房地产</span>
+            <span class="profile-code">99只成份</span>
+          </div>
+          <span class="tag tag-lg green">🟢 低估 PE 12.63 · 分位10%</span>
+        </div>
+        <div class="profile-desc">
+          央国企+地方城投幸存者，民企基本出清。保障房+城中村改造接棒。<br>
+          <strong>关键变量</strong>：商品房销售面积同比、土地出让金、利率
+        </div>
+      </div>
+
+      <div class="stock-profile">
+        <div class="profile-header">
+          <div>
+            <span class="profile-name">4. 建筑装饰</span>
+            <span class="profile-code">156只成份</span>
+          </div>
+          <span class="tag tag-lg green">🟢 低估 PE 11.84 · 分位6.7%</span>
+        </div>
+        <div class="profile-desc">
+          施工总承包+EPC，毛利率薄（5-10%），靠规模和周转。化债推动应收账款改善、一带一路海外订单。<br>
+          <strong>关键变量</strong>：基建投资增速、应收账款周转
+        </div>
+      </div>
+    </div>
+
+    <!-- 能源金属 -->
+    <div id="energy" class="industry-section fade-in">
+      <h3>二、能源金属板块（6个行业）</h3>
+      <p style="color:var(--text-secondary);margin-bottom:16px;font-size:14px">共同点：大宗商品价格定生死，上中游为主，强周期</p>
+
+      <div class="stock-profile">
+        <div class="profile-header">
+          <div><span class="profile-name">5. 煤炭</span><span class="profile-code">37只 · 股息4.93%</span></div>
+          <span class="tag tag-lg green">🟢 低估 PE 18.73 · 分位26.7%</span>
+        </div>
+        <div class="profile-desc">双碳目标下供给端不再扩张、高股息（中国神华、陕西煤业）。以前强周期，2021年后变弱周期。</div>
+      </div>
+
+      <div class="stock-profile">
+        <div class="profile-header">
+          <div><span class="profile-name">6. 石油石化</span><span class="profile-code">47只 · 股息3.61%</span></div>
+          <span class="tag tag-lg green">🟢 低估 PE 15.14 · 分位13.3%</span>
+        </div>
+        <div class="profile-desc">上游（中石油）+ 中游（炼化）+ 下游（中石化加油站）。高分红、新能源替代速度争议。</div>
+      </div>
+
+      <div class="stock-profile">
+        <div class="profile-header">
+          <div><span class="profile-name">7. 有色金属</span><span class="profile-code">142只</span></div>
+          <span class="tag tag-lg yellow">🟡 中性 PE 21.81 · 分位40%</span>
+        </div>
+        <div class="profile-desc">铜（电气化超级周期）、黄金（避险+央行购金）、锂（新能源退潮后产能过剩）、稀土（出口管制）。</div>
+      </div>
+
+      <div class="stock-profile">
+        <div class="profile-header">
+          <div><span class="profile-name">8. 钢铁</span><span class="profile-code">44只</span></div>
+          <span class="tag tag-lg green">🟢 低估 PE 18.60 · 分位23.3%</span>
+        </div>
+        <div class="profile-desc">行业产能整顿、电炉短流程占比上升、特钢龙头有阿尔法（中信特钢、宝钢）。</div>
+      </div>
+
+      <div class="stock-profile">
+        <div class="profile-header">
+          <div><span class="profile-name">9. 电力设备</span><span class="profile-code">369只</span></div>
+          <span class="tag tag-lg red">🔴 高估 PE 37.41 · 分位83.3%</span>
+        </div>
+        <div class="profile-desc">光伏+风电+储能+电网+电池。产能严重过剩，光伏价格战见底争议。</div>
+      </div>
+
+      <div class="stock-profile">
+        <div class="profile-header">
+          <div><span class="profile-name">10. 公用事业</span><span class="profile-code">131只 · 股息2.48%</span></div>
+          <span class="tag tag-lg yellow">🟡 中性 PE 21.24 · 分位33.3%</span>
+        </div>
+        <div class="profile-desc">火电+水电+核电+燃气+水务。弱周期，类债券属性。火电盈利修复（煤价下行）、水电价值重估。</div>
+      </div>
+    </div>
+
+    <!-- 消费医药 -->
+    <div id="consumer" class="industry-section fade-in">
+      <h3>三、消费医药板块（8个行业）</h3>
+      <p style="color:var(--text-secondary);margin-bottom:16px;font-size:14px">共同点：需求侧驱动，品牌+渠道+研发壁垒，相对稳态</p>
+
+      <div class="stock-profile">
+        <div class="profile-header">
+          <div><span class="profile-name">11. 食品饮料</span><span class="profile-code">124只 · 股息4.47%</span></div>
+          <span class="tag tag-lg yellow">🟡 中性 PE 20.91 · 分位30%</span>
+        </div>
+        <div class="profile-desc">白酒（茅五泸）+ 啤酒+ 调味品+ 乳制品。白酒库存周期+消费降级、大众品复苏、零食量贩。</div>
+      </div>
+
+      <div class="stock-profile">
+        <div class="profile-header">
+          <div><span class="profile-name">12. 家用电器</span><span class="profile-code">94只 · 股息3.78%</span></div>
+          <span class="tag tag-lg green">🟢 低估 PE 16.59 · 分位20%</span>
+        </div>
+        <div class="profile-desc">白电（美的格力海尔）+ 黑电+ 厨电+ 小家电。以旧换新政策、出海、机器人/工业自动化。</div>
+      </div>
+
+      <div class="stock-profile">
+        <div class="profile-header">
+          <div><span class="profile-name">18. 医药生物</span><span class="profile-code">480只</span></div>
+          <span class="tag tag-lg yellow">🟡 中性 PE 28.73 · 分位63.3%</span>
+        </div>
+        <div class="profile-desc">创新药出海（License-out）、集采进入尾声、AI制药、CXO订单触底。</div>
+      </div>
+
+      <div class="stock-profile">
+        <div class="profile-header">
+          <div><span class="profile-name">22. 传媒</span><span class="profile-code">130只</span></div>
+          <span class="tag tag-lg yellow">🟡 中性 PE 28.21 · 分位60%</span>
+        </div>
+        <div class="profile-desc">游戏+ 影视+ 出版+ 营销。游戏版号常态化、AI内容生成、IP衍生。<span style="color:var(--accent)"> ✓ 持仓：奥飞娱乐</span></div>
+      </div>
+    </div>
+
+    <!-- 科技TMT -->
+    <div id="tech" class="industry-section fade-in">
+      <h3>四、科技TMT板块（5个行业）</h3>
+      <p style="color:var(--text-secondary);margin-bottom:16px;font-size:14px">共同点：高估值高弹性，技术+订单驱动，A股最贵的地方</p>
+
+      <div class="stock-profile">
+        <div class="profile-header">
+          <div><span class="profile-name">19. 电子</span><span class="profile-code">484只 · A股第二大行业</span></div>
+          <span class="tag tag-lg red">🔴 高估 PE 70.66 · 分位96.7%</span>
+        </div>
+        <div class="profile-desc">半导体+消费电子+元器件+光学光电。AI算力（HBM、CoWoS）、华为产业链、自主可控。<span style="color:var(--accent)"> ✓ 持仓：安凯+通富+国光+小米</span></div>
+      </div>
+
+      <div class="stock-profile">
+        <div class="profile-header">
+          <div><span class="profile-name">20. 计算机</span><span class="profile-code">334只</span></div>
+          <span class="tag tag-lg red">🔴 高估 PE 54.10 · 分位90%</span>
+        </div>
+        <div class="profile-desc">软件+IT服务+云计算+信创+AI应用。AI大模型应用落地、信创订单。<span style="color:var(--accent)"> ✓ 持仓：商汤(港股映射)</span></div>
+      </div>
+
+      <div class="stock-profile">
+        <div class="profile-header">
+          <div><span class="profile-name">23. 国防军工</span><span class="profile-code">140只</span></div>
+          <span class="tag tag-lg red">🔴 高估 PE 65.39 · 分位93.3%</span>
+        </div>
+        <div class="profile-desc">航空+航天+兵器+船舶。十四五尾年订单兑现、低空经济、地缘紧张。<span style="color:var(--accent)"> ✓ 持仓：中航西飞+卫星ETF</span></div>
+      </div>
+
+      <div class="stock-profile">
+        <div class="profile-header">
+          <div><span class="profile-name">21. 通信</span><span class="profile-code">123只</span></div>
+          <span class="tag tag-lg red">🔴 高估 PE 32.27 · 分位73.3%</span>
+        </div>
+        <div class="profile-desc">运营商+设备+光通信+算力服务器+卫星互联网。AI驱动光模块爆发。</div>
+      </div>
+    </div>
+
+    <!-- 制造周期 -->
+    <div id="mfg" class="industry-section fade-in">
+      <h3>五、制造周期板块（8个行业）</h3>
+      <p style="color:var(--text-secondary);margin-bottom:16px;font-size:14px">共同点：产能+需求双轮，工业品/服务，需求弹性大</p>
+
+      <div class="stock-profile">
+        <div class="profile-header">
+          <div><span class="profile-name">26. 基础化工</span><span class="profile-code">409只</span></div>
+          <span class="tag tag-lg yellow">🟡 中性 PE 28.20 · 分位56.7%</span>
+        </div>
+        <div class="profile-desc">化学原料+化学制品+化纤+塑料橡胶+化工新材料。周期底部、新材料（半导体材料）。<span style="color:var(--accent)"> ✓ 持仓：彤程新材+航锦科技</span></div>
+      </div>
+
+      <div class="stock-profile">
+        <div class="profile-header">
+          <div><span class="profile-name">24. 汽车</span><span class="profile-code">286只</span></div>
+          <span class="tag tag-lg yellow">🟡 中性 PE 26.76 · 分位53.3%</span>
+        </div>
+        <div class="profile-desc">新能源渗透率突破50%、出口爆发、智能驾驶（华为系、特斯拉FSD入华）。</div>
+      </div>
+
+      <div class="stock-profile">
+        <div class="profile-header">
+          <div><span class="profile-name">29. 交通运输</span><span class="profile-code">126只</span></div>
+          <span class="tag tag-lg green">🟢 低估 PE 15.48 · 分位16.7%</span>
+        </div>
+        <div class="profile-desc">航空+航运+港口+高速公路+物流。油运（地缘紧张推升运价）、跨境电商物流。</div>
+      </div>
+    </div>
+
+    <!-- Decision Tree -->
+    <div class="card fade-in">
+      <div class="card-header">
+        <span class="card-title">30秒决策树</span>
+      </div>
+      <div class="insight-box">
+        <div class="insight-title">看到一只股票 → 查它属于哪个行业</div>
+        <p>行业是低估/中性/高估？<br>
+        → <strong>低估</strong>：是因为"便宜的有理由"吗？能解答这个担忧，就值得深挖<br>
+        → <strong>高估</strong>：增速能持续支撑估值吗？能=好赛道（如AI），不能=警惕（如军工）</p>
+      </div>
+    </div>
+
+    <!-- My Holdings -->
+    <div class="card fade-in">
+      <div class="card-header">
+        <span class="card-title">我的持仓行业评估</span>
+      </div>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>持仓</th><th>所属行业</th><th>行业估值</th><th>评估</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>中金+信达</strong></td><td>非银金融</td><td><span class="tag green">🟢低估 3.3%</span></td><td>行业贝塔好，但要看个股阿尔法</td></tr>
+            <tr><td><strong>彤程+航锦</strong></td><td>基础化工</td><td><span class="tag yellow">🟡中性 56.7%</span></td><td>行业不算便宜，看子赛道</td></tr>
+            <tr><td><strong>奥飞</strong></td><td>传媒</td><td><span class="tag yellow">🟡中性 60%</span></td><td>行业有AI主题，但奥飞是衍生品</td></tr>
+            <tr><td><strong>安凯</strong></td><td>电子</td><td><span class="tag red">🔴高估 96.7%</span></td><td>行业贵，必须看阿尔法</td></tr>
+            <tr><td><strong>商汤</strong></td><td>计算机/AI</td><td><span class="tag red">🔴高估 90%</span></td><td>同上</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="verdict-box neutral" style="margin-top:16px">
+        <div class="verdict-title">结论</div>
+        持仓两头分化（低估金融+高估科技），缺中间地带的稳态消费/低估周期。
+      </div>
+    </div>
+
+    <div class="footer">
+      行业研究 · 数据来源：AkShare 申万指数 · 更新日期：2026-05-19
+    </div>
+  </div>
+</div>
+
+<button class="back-top" onclick="scrollToTop()">↑</button>
+<script src="js/main.js"></script>
+</body>
+</html>

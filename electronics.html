@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>电子 · 行业卡片</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+<div class="layout">
+  <nav class="sidebar">
+    <div class="sidebar-header">
+      <h1>行业研究</h1>
+      <div class="subtitle">申万一级行业 · 31个行业</div>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-title">总览</div>
+      <a href="index.html" class="nav-item">📊 全行业概览</a>
+      <a href="holdings.html" class="nav-item">📋 持仓行业映射</a>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-title">深度研究</div>
+      <a href="nonbank-finance.html" class="nav-item">🏦 非银金融 <span class="badge green">低估</span></a>
+      <a href="defense.html" class="nav-item">✈️ 国防军工 <span class="badge red">高估</span></a>
+      <a href="electronics.html" class="nav-item active">💻 电子 <span class="badge red">高估</span></a>
+    </div>
+  </nav>
+
+  <div class="main-content">
+    <div class="page-header fade-in">
+      <h2>电子（801080.SI）· 行业卡片</h2>
+      <div class="meta">半导体 + 消费电子 + 元器件 + 光学光电 · 持仓：✓ 安凯+通富+国光+小米 · 更新：2026-05-19</div>
+    </div>
+
+    <!-- 30秒概览 -->
+    <div class="stats-row fade-in">
+      <div class="stat-card"><div class="stat-value" style="color:var(--accent)">484</div><div class="stat-label">成份股 · A股第二大行业</div></div>
+      <div class="stat-card"><div class="stat-value red">70.66</div><div class="stat-label">PE-TTM · 分位96.7%</div></div>
+      <div class="stat-card"><div class="stat-value red">7.30</div><div class="stat-label">PB · 分位100%</div></div>
+      <div class="stat-card"><div class="stat-value" style="color:var(--accent)">0.44%</div><div class="stat-label">股息率</div></div>
+    </div>
+
+    <div class="verdict-box bearish fade-in">
+      <div class="verdict-title">一句话定位</div>
+      A股最贵的赛道，承载"国产替代+AI算力+消费电子复苏"三大叙事。估值贵但弹性最大，alpha与beta都来自技术与订单的非线性变化。你最重仓的一级行业（4只+1只港股）。
+    </div>
+
+    <!-- 6个二级行业 -->
+    <div class="card fade-in">
+      <div class="card-header"><span class="card-title">6个二级行业估值对比</span></div>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>二级行业</th><th>成份</th><th>PE-TTM</th><th>PB</th><th>子赛道</th><th>当前主线</th></tr></thead>
+          <tbody>
+            <tr><td><strong>半导体</strong></td><td>174</td><td style="color:var(--red)">107.53</td><td>9.56</td><td>设计+制造+封测+设备+材料</td><td>AI算力+国产替代</td></tr>
+            <tr><td>元件</td><td>58</td><td>72.80</td><td>8.82</td><td>PCB+被动元件+连接器</td><td>AI服务器PCB爆发</td></tr>
+            <tr><td>光学光电子</td><td>95</td><td>53.47</td><td>2.76</td><td>面板+LED+光学镜头</td><td>OLED+车载显示</td></tr>
+            <tr><td>其他电子Ⅱ</td><td>33</td><td>62.01</td><td>6.57</td><td>各种细分</td><td>—</td></tr>
+            <tr><td style="color:var(--green)"><strong>消费电子</strong></td><td>90</td><td style="color:var(--green)">39.51</td><td>5.82</td><td>手机+穿戴+智能家居+车载</td><td>苹果链+AI硬件</td></tr>
+            <tr><td>电子化学品Ⅱ</td><td>34</td><td>98.42</td><td>7.31</td><td>光刻胶+电子特气+CMP</td><td>半导体国产替代</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="insight-box" style="margin-top:12px">
+        <div class="insight-title">关键观察</div>
+        半导体PE 107倍是全A股最贵的赛道之一，贵到只有"国产替代必须成功"才能撑住。<strong>消费电子PE 39倍反而是电子里最便宜的</strong>，因为苹果链+手机进入成熟期。
+      </div>
+    </div>
+
+    <!-- 三大主线 -->
+    <div class="card fade-in">
+      <div class="card-header"><span class="card-title">三大当前主线</span></div>
+
+      <div class="stock-profile">
+        <div class="profile-header">
+          <div><span class="profile-name">主线一：AI算力（最热，估值最贵）</span></div>
+          <span class="tag tag-lg green">⭐⭐⭐⭐⭐</span>
+        </div>
+        <div class="profile-desc">
+          英伟达GB200/300、谷歌TPU、华为昇腾、寒武纪。HBM国产替代、CoWoS先进封装、AI PCB、AI存储全链路放量。<br>
+          <strong>对通富</strong>：AMD MI300/400系列封测主供应商，AI相关收入占比有望从15%→30%。<br>
+          <strong>关键变量</strong>：英伟达资本开支、台积电CoWoS产能
+        </div>
+      </div>
+
+      <div class="stock-profile">
+        <div class="profile-header">
+          <div><span class="profile-name">主线二：自主可控/国产替代</span></div>
+          <span class="tag tag-lg green">⭐⭐⭐⭐⭐</span>
+        </div>
+        <div class="profile-desc">
+          美国对华芯片出口管制持续收紧、华为麒麟回归、本土晶圆厂扩产。设备（北方华创）、材料（彤程新材）、制造（中芯国际）、EDA（华大九天）受益。<br>
+          <strong>对安凯</strong>：间接受益（板块β）
+        </div>
+      </div>
+
+      <div class="stock-profile">
+        <div class="profile-header">
+          <div><span class="profile-name">主线三：消费电子复苏 + AI硬件</span></div>
+          <span class="tag tag-lg yellow">⭐⭐⭐⭐</span>
+        </div>
+        <div class="profile-desc">
+          手机出货回升、AI手机/AI PC概念、折叠屏渗透率。苹果链（立讯）、安卓链（小米）、AI硬件（漫步者、雷鸟）。<br>
+          <strong>对小米</strong>：核心α在汽车业务（YU7）。<strong>对国光</strong>：音箱品类衰退。
+        </div>
+      </div>
+    </div>
+
+    <!-- 4只持仓 -->
+    <div class="card fade-in">
+      <div class="card-header"><span class="card-title">你的4只持仓深度定位</span></div>
+
+      <div class="stock-profile" style="border-left:3px solid var(--green)">
+        <div class="profile-header">
+          <div>
+            <span class="profile-name">通富微电（002156）· 封测</span>
+            <span class="profile-code">AMD最大封测合作伙伴</span>
+          </div>
+          <span class="tag tag-lg green">🟢 持有看止盈 · +108%</span>
+        </div>
+        <div class="profile-grid">
+          <div class="metric"><div class="value" style="color:var(--green)">13.8亿</div><div class="label">2025净利</div></div>
+          <div class="metric"><div class="value" style="color:var(--green)">+74%</div><div class="label">2025 YoY</div></div>
+          <div class="metric"><div class="value" style="color:var(--green)">+175%</div><div class="label">Q1 YoY</div></div>
+          <div class="metric"><div class="value">8.1%</div><div class="label">ROE 2025</div></div>
+        </div>
+        <div class="profile-desc">
+          AI封测核心受益股。AMD MI300/400订单持续兑现，Chiplet+2.5D先进封装能力。<br>
+          <strong>建议</strong>：考虑分批止盈（如先止盈一半锁定+108%，留一半博AMD MI400）
+        </div>
+      </div>
+
+      <div class="stock-profile" style="border-left:3px solid var(--yellow)">
+        <div class="profile-header">
+          <div>
+            <span class="profile-name">安凯微电子（688620）· IC设计</span>
+            <span class="profile-code">音视频SoC（监控摄像头+智能门锁）</span>
+          </div>
+          <span class="tag tag-lg yellow">🟡 持有等兑现 · +9%</span>
+        </div>
+        <div class="profile-grid">
+          <div class="metric"><div class="value" style="color:var(--red)">-1.4亿</div><div class="label">2025净利</div></div>
+          <div class="metric"><div class="value" style="color:var(--red)">-147%</div><div class="label">2025 YoY</div></div>
+          <div class="metric"><div class="value" style="color:var(--green)">+8.5%</div><div class="label">Q1好转</div></div>
+          <div class="metric"><div class="value" style="color:var(--red)">-10.3%</div><div class="label">ROE 2025</div></div>
+        </div>
+        <div class="profile-desc">
+          持续亏损但2026Q1略有好转。思澈科技收购整合（蓝牙IP）待验证。<br>
+          <strong>建议</strong>：等2026Q2半年报兑现，看毛利率+思澈整合
+        </div>
+      </div>
+
+      <div class="stock-profile" style="border-left:3px solid var(--red)">
+        <div class="profile-header">
+          <div>
+            <span class="profile-name">国光电器（002045）· 声学代工</span>
+            <span class="profile-code">音箱+电池 · 🔴问题股</span>
+          </div>
+          <span class="tag tag-lg red">🔴 恶化中 · -33%</span>
+        </div>
+        <div class="profile-grid">
+          <div class="metric"><div class="value" style="color:var(--red)">-1.1亿</div><div class="label">2025净利</div></div>
+          <div class="metric"><div class="value" style="color:var(--red)">-144%</div><div class="label">2025 YoY</div></div>
+          <div class="metric"><div class="value" style="color:var(--red)">-179%</div><div class="label">Q1继续恶化</div></div>
+          <div class="metric"><div class="value" style="color:var(--red)">-2.6%</div><div class="label">ROE 2025</div></div>
+        </div>
+        <div class="profile-desc">
+          从盈利2.5亿→亏损1.1亿→Q1继续恶化。音箱品类衰退+白牌代工竞争+苹果转产印度。<br>
+          <strong style="color:var(--red)">⚠️ 强烈建议</strong>：必须做独立空头分析+止损决策
+        </div>
+      </div>
+
+      <div class="stock-profile" style="border-left:3px solid var(--yellow)">
+        <div class="profile-header">
+          <div>
+            <span class="profile-name">小米集团-W（01810.HK）· 多元化</span>
+            <span class="profile-code">手机+汽车+IoT+互联网</span>
+          </div>
+          <span class="tag tag-lg yellow">🟡 持有等YU7 · -7%</span>
+        </div>
+        <div class="profile-desc">
+          核心α在汽车业务。YU7上市定价（2026Q3）是关键——≥25万利好，<25万利空。<br>
+          <strong>建议</strong>：等2026Q2半年报+YU7定价，目前持有等兑现
+        </div>
+      </div>
+    </div>
+
+    <!-- 半导体横向对比 -->
+    <div class="card fade-in">
+      <div class="card-header"><span class="card-title">半导体子赛道 · 个股对比</span></div>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>公司</th><th>市值(亿)</th><th>PE</th><th>ROE</th><th>2025 YoY</th><th>Q1 YoY</th><th>特色</th></tr></thead>
+          <tbody>
+            <tr><td>中芯国际</td><td>7,000</td><td>85</td><td>6%</td><td>+27%</td><td>—</td><td>制造龙头</td></tr>
+            <tr><td>寒武纪</td><td>3,500</td><td>亏损</td><td>负</td><td>+65%</td><td>-31%</td><td>AI芯片</td></tr>
+            <tr><td><strong>北方华创</strong></td><td>3,000</td><td>40</td><td style="color:var(--green)">15%</td><td>+35%</td><td>持平</td><td>设备龙头</td></tr>
+            <tr><td>海光信息</td><td>2,500</td><td>120</td><td>8%</td><td>+52%</td><td>+23%</td><td>CPU/DCU</td></tr>
+            <tr><td>韦尔股份</td><td>1,700</td><td>50</td><td>13%</td><td>+22%</td><td style="color:var(--red)">-43%</td><td>CIS</td></tr>
+            <tr><td><strong>兆易创新</strong></td><td>700</td><td>50</td><td>5%</td><td>+52%</td><td style="color:var(--green)">+514%</td><td>存储爆发</td></tr>
+            <tr><td><strong>沪电股份</strong></td><td>700</td><td>35</td><td style="color:var(--green)">25%</td><td>+49%</td><td style="color:var(--green)">+63%</td><td>AI PCB龙头</td></tr>
+            <tr style="background:rgba(74,125,255,0.06)"><td><strong>通富微电 ✓</strong></td><td><strong>600</strong></td><td><strong>50</strong></td><td><strong>6%</strong></td><td style="color:var(--green)"><strong>+74%</strong></td><td style="color:var(--green)"><strong>+175%</strong></td><td style="color:var(--accent)">✓封测+AI</td></tr>
+            <tr style="background:rgba(74,125,255,0.06)"><td><strong>安凯微 ✓</strong></td><td><strong>70</strong></td><td><strong>80</strong></td><td style="color:var(--red)"><strong>-10.3%</strong></td><td style="color:var(--red)"><strong>-147%</strong></td><td style="color:var(--green)"><strong>+8.5%</strong></td><td style="color:var(--accent)">✓音视频SoC</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="insight-box" style="margin-top:12px">
+        <div class="insight-title">关键洞察</div>
+        通富在半导体里属于"中等估值+高弹性"（PE 50 vs 中芯85/海光120）。安凯估值偏贵（PE 80），业绩兑现压力大。<strong>兆易创新Q1+514%</strong>是存储周期上行信号。<strong>沪电股份</strong>是AI PCB龙头（ROE 25%最高）。
+      </div>
+    </div>
+
+    <!-- 消费电子对比 -->
+    <div class="card fade-in">
+      <div class="card-header"><span class="card-title">消费电子子赛道 · 个股对比</span></div>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>公司</th><th>市值(亿)</th><th>PE</th><th>ROE</th><th>特色</th><th>与你持仓</th></tr></thead>
+          <tbody>
+            <tr><td>工业富联</td><td>6,000</td><td>30</td><td>16%</td><td>AI服务器ODM</td><td>AI链</td></tr>
+            <tr style="background:rgba(74,125,255,0.06)"><td><strong>小米 ✓</strong></td><td><strong>6,500</strong></td><td><strong>32</strong></td><td><strong>12%</strong></td><td>多元化</td><td style="color:var(--accent)">✓持仓</td></tr>
+            <tr><td>立讯精密</td><td>3,000</td><td>24</td><td style="color:var(--green)">17%</td><td>苹果链龙头</td><td>行业龙头</td></tr>
+            <tr><td>蓝思科技</td><td>1,200</td><td>28</td><td>10%</td><td>玻璃盖板</td><td>—</td></tr>
+            <tr><td>传音控股</td><td>1,000</td><td style="color:var(--green)">17</td><td style="color:var(--green)">22%</td><td>非洲手机之王</td><td>同出海</td></tr>
+            <tr><td>歌尔股份</td><td>700</td><td>25</td><td>7%</td><td>声学+VR</td><td>同声学</td></tr>
+            <tr style="background:rgba(239,68,68,0.06)"><td><strong>国光电器 ✓</strong></td><td><strong>50</strong></td><td><strong>30</strong></td><td style="color:var(--red)"><strong>-2.6%</strong></td><td>声学代工</td><td style="color:var(--accent)">✓🔴问题股</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="verdict-box bearish" style="margin-top:12px">
+        <div class="verdict-title">消费电子持仓结论</div>
+        国光在消费电子龙头里属于"最差行列"：规模小30x（vs 歌尔）、ROE -2.6%、品类衰退。<br>
+        小米估值不算贵（PE 32 + ROE 12%），核心α在汽车业务。<br>
+        <strong>如果想换标的</strong>：立讯（苹果链）/ 蓝思（汽车+苹果双驱动）/ 传音（出海）都比国光强得多。
+      </div>
+    </div>
+
+    <!-- 政策环境 -->
+    <div class="card fade-in">
+      <div class="card-header"><span class="card-title">重大政策/事件</span></div>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>政策/事件</th><th>时间</th><th>影响</th><th>方向</th><th>程度</th></tr></thead>
+          <tbody>
+            <tr><td><strong>英伟达Blackwell GB200量产</strong></td><td>2025-2026</td><td style="color:var(--accent)">✓通富</td><td>🟢利好</td><td>⭐⭐⭐⭐⭐</td></tr>
+            <tr><td><strong>大基金三期（3440亿）</strong></td><td>2024-05</td><td>半导体全链</td><td>🟢利好</td><td>⭐⭐⭐⭐⭐</td></tr>
+            <tr><td><strong>华为芯片回归</strong></td><td>2023-2025</td><td>国产半导体链</td><td>🟢利好</td><td>⭐⭐⭐⭐⭐</td></tr>
+            <tr><td><strong>小米YU7上市</strong></td><td>2026-Q3</td><td style="color:var(--accent)">✓小米</td><td>🟢/🔴看定价</td><td>⭐⭐⭐⭐⭐</td></tr>
+            <tr><td><strong>思澈科技整合</strong></td><td>2024-2025</td><td style="color:var(--accent)">✓安凯</td><td>🟢中性偏多</td><td>⭐⭐⭐⭐</td></tr>
+            <tr><td><strong>美国BIS实体清单扩大</strong></td><td>2024-12</td><td>半导体</td><td>🔴短期/🟢长期</td><td>⭐⭐⭐⭐⭐</td></tr>
+            <tr><td><strong>苹果产业链转产印度</strong></td><td>持续</td><td style="color:var(--accent)">✓国光</td><td>🔴利空</td><td>⭐⭐⭐⭐</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 关键变量 -->
+    <div class="card fade-in">
+      <div class="card-header"><span class="card-title">关键变量监控</span></div>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>优先级</th><th>变量</th><th>当前水平</th><th>友好区间</th><th>危险区间</th></tr></thead>
+          <tbody>
+            <tr><td><span class="tag red">P0</span></td><td>英伟达季度CapEx</td><td>$300+亿/季</td><td>>$300亿</td><td>< $200亿</td></tr>
+            <tr><td><span class="tag red">P0</span></td><td>半导体板块PE</td><td>107倍</td><td>< 80倍</td><td>> 120倍</td></tr>
+            <tr><td><span class="tag red">P0</span></td><td>通富AMD相关收入占比</td><td>~15%</td><td>上行</td><td>持平/下行</td></tr>
+            <tr><td><span class="tag yellow">P1</span></td><td>美国新一轮管制</td><td>持续</td><td>阶段性稳定</td><td>升级</td></tr>
+            <tr><td><span class="tag yellow">P1</span></td><td>小米汽车毛利率</td><td>~18%</td><td>>20%</td><td>< 15%</td></tr>
+            <tr><td><span class="tag green">P2</span></td><td>国光电器营收增速</td><td>-10%+</td><td>转正</td><td>持续下滑</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 验证节点 -->
+    <div class="card fade-in">
+      <div class="card-header"><span class="card-title">验证节点时间表</span></div>
+      <div class="timeline">
+        <div class="timeline-item"><div class="time">2026-Q2</div><div class="title">通富/安凯半年报</div><div class="desc">通富AMD收入占比、安凯思澈整合</div></div>
+        <div class="timeline-item"><div class="time">2026-Q2</div><div class="title">小米半年报</div><div class="desc">汽车毛利率+SU7/YU7销量</div></div>
+        <div class="timeline-item"><div class="time">2026-Q3</div><div class="title">小米YU7上市</div><div class="desc">定价（25万分水岭）</div></div>
+        <div class="timeline-item"><div class="time">2026-Q3</div><div class="title">英伟达Blackwell量产</div><div class="desc">AI算力链兑现</div></div>
+        <div class="timeline-item"><div class="time">2026-Q4</div><div class="title">华为Mate80</div><div class="desc">国产半导体再次验证</div></div>
+        <div class="timeline-item"><div class="time">2027-Q1</div><div class="title">半导体周期高度判断</div><div class="desc">是延续上行还是回调</div></div>
+      </div>
+    </div>
+
+    <!-- 综合判断 -->
+    <div class="card fade-in">
+      <div class="card-header"><span class="card-title">综合判断</span></div>
+      <div class="verdict-box neutral">
+        <div class="verdict-title">行业贝塔：震荡向上但估值透支 🟡</div>
+        未来6个月震荡，2027年起结构性向上。<br>
+        <strong>支撑 top3</strong>：AI算力超级周期、国产替代不可逆、华为产业链放量<br>
+        <strong>风险 top3</strong>：估值已严重透支、AI需求证伪、美国管制升级
+      </div>
+    </div>
+
+    <!-- 持仓启示 -->
+    <div class="card fade-in">
+      <div class="card-header"><span class="card-title">操作建议汇总</span></div>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>持仓</th><th>状态</th><th>盈亏</th><th>建议</th></tr></thead>
+          <tbody>
+            <tr><td><strong>通富微电</strong></td><td><span class="tag green">持有看止盈</span></td><td style="color:var(--green)">+108%</td><td>考虑分批止盈（先止盈一半锁定+108%，留一半博MI400）</td></tr>
+            <tr><td><strong>安凯微</strong></td><td><span class="tag yellow">持有等兑现</span></td><td style="color:var(--green)">+9%</td><td>等2026Q2半年报，看思澈整合+毛利率</td></tr>
+            <tr><td><strong>国光电器</strong></td><td><span class="tag red">恶化中</span></td><td style="color:var(--red)">-33%</td><td style="color:var(--red)">必须做独立空头分析+止损决策</td></tr>
+            <tr><td><strong>小米</strong></td><td><span class="tag yellow">持有等YU7</span></td><td style="color:var(--red)">-7%</td><td>等2026Q2半年报+YU7定价，目前持有</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="footer">电子 · 行业卡片 · 数据来源：AkShare + baostock · 更新：2026-05-19</div>
+  </div>
+</div>
+<button class="back-top" onclick="scrollToTop()">↑</button>
+<script src="js/main.js"></script>
+</body>
+</html>
